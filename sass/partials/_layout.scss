@@ -1,0 +1,25 @@
+.container{
+    padding-bottom: ($base-Length * 30);
+}
+hr {
+    border: 0;
+    height: 1px;
+    margin: ($base-Length * 4) 0;
+}
+
+.icons{
+    position: relative;
+    margin: ($base-Length * 4) 0;
+    height: ($base-Length * 10);
+    padding: ($base-Length * 4);
+}
+
+.box{
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: ($base-Length * 7);
+    height: ($base-Length * 7);
+    margin: ($base-Length * 4) 0;
+}

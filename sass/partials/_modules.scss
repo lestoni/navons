@@ -1,0 +1,165 @@
+header h1{
+    @include text-shadow(1px 1px 0 $white, 2px 2px 0 $lite-gray);
+    font: {
+        weight: 500;
+        style: italic;
+    }
+}
+
+$color-stop1: rgba($black, 0);
+$color-stop2: rgba($black, 0.15);
+hr {
+    @include background(linear-gradient(left, $color-stop1, $color-stop2, $color-stop1));
+}
+.icons{
+    & > p{
+        margin-left: $base-Length * 5;
+        margin-top: $base-Length * 3;
+    }
+}
+.box{
+    @include border-radius(50%);
+    @include box-shadow(0 0 ($base-Length / 2) ($base-Length / 5) #dddddd);
+    background-color: $hot-blue;
+    text-align: center;
+    line-height: ($base-Length * 7);
+}
+
+.icon {
+    @include transition(transform 0.8s, background-color 0.3s);
+
+    &:hover {
+        background-color: $hot-orange;
+    }
+
+    & a {
+        display: block;
+    }
+}
+
+.controller{
+    z-index: 1;
+    cursor: pointer;
+
+    &.icon:hover {
+        background-color: $hot-blue;
+    }
+}
+
+//
+// Dynamic styles
+//=======================================
+
+.roll {
+    // fan
+    &.icon.fan:nth-child(2) {
+        @include transform(translate3d(70px, -90px, 0) rotate(360deg));
+    }
+
+    &.icon.fan:nth-child(3) {
+        @include transform(translate3d(170px, -50px, 0) rotate(360deg));
+    }
+
+    &.icon.fan:nth-child(4) {
+        @include transform(translate3d(170px, 50px, 0) rotate(360deg));
+    }
+
+    &.icon.fan:nth-child(5) {
+        @include transform(translate3d(70px, 90px, 0) rotate(360deg));
+    }
+
+    // right
+    &.icon.right:nth-child(2) {
+        @include transform(translateX(110px) rotate(360deg));
+    }
+
+    &.icon.right:nth-child(3) {
+        @include transform(translateX(220px) rotate(360deg));
+    }
+
+    &.icon.right:nth-child(4) {
+        @include transform(translateX(330px) rotate(360deg));
+    }
+
+    &.icon.right:nth-child(5) {
+        @include transform(translateX(440px) rotate(360deg));
+    }
+
+    // left
+    &.icon.left:nth-child(1) {
+        @include transform(translateX(400px) rotate(360deg));
+    }
+
+    &.icon.left:nth-child(2) {
+        @include transform(translateX(300px) rotate(360deg));
+    }
+
+    &.icon.left:nth-child(3) {
+        @include transform(translateX(200px) rotate(360deg));
+    }
+
+    &.icon.left:nth-child(4) {
+        @include transform(translateX(100px) rotate(360deg));
+    }
+
+    &.icon.left:nth-child(5) {
+        @include transform(translateX(0) rotate(0deg));
+    }
+
+
+    // down
+    &.icon.down:nth-child(2) {
+        @include transform(translateY(100px) rotate(360deg));
+    }
+
+    &.icon.down:nth-child(3) {
+        @include transform(translateY(200px) rotate(360deg));
+    }
+
+    &.icon.down:nth-child(4) {
+        @include transform(translateY(300px) rotate(360deg));
+    }
+
+    &.icon.down:nth-child(5) {
+        @include transform(translateY(400px) rotate(360deg));
+    }
+
+    // circular
+    &.icon.circular:nth-child(2) {
+
+        @include transform(rotate(0deg) translateX(100px));
+
+    }
+
+    &.icon.circular:nth-child(3) {
+
+        @include transform(rotate(-90deg) translateX(100px));
+    }
+
+    &.icon.circular:nth-child(4) {
+
+        @include transform( rotate(-180deg) translateX(100px));
+    }
+
+    &.icon.circular:nth-child(5) {
+        @include transform( rotate(-270deg) translateX(100px));
+    }
+
+    // bouncy
+    &.icon.bouncy:nth-child(2) {
+        @include transform(translate3d(120px, 0, 0) rotate(360deg));
+
+    }
+
+    &.icon.bouncy:nth-child(3) {
+        @include transform(translate3d(0, -120px, 0) rotate(360deg));
+    }
+
+    &.icon.bouncy:nth-child(4) {
+        @include transform(translate3d(-120px, 0, 0) rotate(360deg) );
+    }
+
+    &.icon.bouncy:nth-child(5) {
+        @include transform(translate3d(0, 120px, 0) rotate(360deg) );
+    }
+}
